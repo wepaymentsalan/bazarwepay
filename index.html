@@ -5,40 +5,74 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bazar de Notebooks</title>
     <style>
-        body { font-family: Arial, sans-serif; text-align: center; }
-        .container { max-width: 800px; margin: 0 auto; }
-        .notebook { border: 1px solid #ccc; padding: 10px; margin: 10px; border-radius: 5px; }
-        .notebook img { max-width: 150px; }
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, #d1a3ff, #a16ae8);
+            text-align: center;
+            padding: 20px;
+        }
+        .logo {
+            width: 200px;
+            margin-bottom: 20px;
+        }
+        table {
+            width: 80%;
+            margin: auto;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+        }
+        th {
+            background: #6b4ca5;
+            color: white;
+        }
+        .reservar {
+            background: #6b4ca5;
+            color: white;
+            padding: 5px 10px;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+        }
     </style>
 </head>
 <body>
+    <img class="logo" src="https://wepayments.com/wp-content/uploads/2021/08/logo-wepayments.svg" alt="Logo da Empresa">
     <h1>Bazar de Notebooks</h1>
-    <div class="container" id="notebooks"></div>
-    
-    <script>
-        const notebooks = [
-            { modelo: "Lenovo ThinkPad e14", Processador: "i5", Memoria RAM "8GB", estado: "Usado - Bom estado", preco: "R$ 1.500,00", img: "https://via.placeholder.com/150" },
-            { modelo: "Lenovo ThinkPad e14", Processador: "i7", estado: "Usado - Excelente", preco: "R$ 2.000,00", img: "https://via.placeholder.com/150" },
-            { modelo: "Lenovo ThinkPad", marca: "HP", estado: "Usado - Regular", preco: "R$ 1.200,00", img: "https://via.placeholder.com/150" }
-        ];
-        
-        function carregarNotebooks() {
-            const container = document.getElementById("notebooks");
-            notebooks.forEach(nb => {
-                const div = document.createElement("div");
-                div.className = "notebook";
-                div.innerHTML = `
-                    <img src="${nb.img}" alt="${nb.modelo}">
-                    <h2>${nb.modelo}</h2>
-                    <p><strong>Marca:</strong> ${nb.marca}</p>
-                    <p><strong>Estado:</strong> ${nb.estado}</p>
-                    <p><strong>Preço:</strong> ${nb.preco}</p>
-                `;
-                container.appendChild(div);
-            });
-        }
-        
-        carregarNotebooks();
-    </script>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Imagem</th>
+            <th>Marca</th>
+            <th>Modelo</th>
+            <th>Processador</th>
+            <th>Memória</th>
+            <th>Reservar</th>
+        </tr>
+        <tr>
+            <td>001</td>
+            <td><img src="notebook1.jpg" width="100"></td>
+            <td>Dell</td>
+            <td>Inspiron 15</td>
+            <td>Intel i5</td>
+            <td>8GB RAM</td>
+            <td><a class="reservar" href="mailto:agomes@wepayments.com.br?subject=Reserva Notebook 001">Reservar</a></td>
+        </tr>
+        <tr>
+            <td>002</td>
+            <td><img src="notebook2.jpg" width="100"></td>
+            <td>Lenovo</td>
+            <td>ThinkPad X1</td>
+            <td>Intel i7</td>
+            <td>16GB RAM</td>
+            <td><a class="reservar" href="mailto:agomes@wepayments.com.br?subject=Reserva Notebook 002">Reservar</a></td>
+        </tr>
+    </table>
+</body>
+</html>
 
-   
